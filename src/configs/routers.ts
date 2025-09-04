@@ -5,6 +5,7 @@ import ORDER_MANAGEMENT from '../pages/order-management.jsx';
 import ADMIN_DASHBOARD from '../pages/admin-dashboard.jsx';
 import MENU_MANAGEMENT from '../pages/menu-management.jsx';
 import ADMIN_ORDERS from '../pages/admin-orders.jsx';
+import ADMIN_GUIDE from '../pages/admin-guide.jsx';
 export const routers = [{
   id: "index",
   component: INDEX
@@ -26,4 +27,7 @@ export const routers = [{
 }, {
   id: "admin-orders",
   component: ADMIN_ORDERS
+}, {
+  id: "admin-guide",
+  component: ADMIN_GUIDE
 }]

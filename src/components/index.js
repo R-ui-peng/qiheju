@@ -16,3 +16,4 @@ export * from './MenuTable.jsx';
 export * from './MenuForm.jsx';
 export * from './AdminOrderTable.jsx';
 export * from './OrderDetailModal.jsx';
+export * from './AdminAccessGuide.jsx';
