@@ -1,7 +1,9 @@
 // @ts-ignore;
 import React, { useState } from 'react';
 // @ts-ignore;
-import { useToast } from '@/components/ui';
+import { useToast, Button } from '@/components/ui';
+// @ts-ignore;
+import { Settings } from 'lucide-react';
 
 import { RestaurantHeader } from '@/components/RestaurantHeader';
 import { CategoryTabs } from '@/components/CategoryTabs';
@@ -128,12 +130,26 @@ export default function RestaurantHome(props) {
       }
     });
   };
+  const handleAdminClick = () => {
+    $w.utils.navigateTo({
+      pageId: 'admin-dashboard',
+      params: {}
+    });
+  };
   const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   return <div className="min-h-screen bg-gray-50 pb-20">
       <RestaurantHeader restaurantInfo={restaurantInfo} onLogoClick={() => $w.utils.navigateTo({
       pageId: 'about'
     })} />
+      
+      {/* 管理后台入口按钮 */}
+      <div className="fixed top-20 right-4 z-50">
+        <Button onClick={handleAdminClick} className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg rounded-full px-4 py-2" size="sm">
+          <Settings className="w-4 h-4 mr-1" />
+          管理后台
+        </Button>
+      </div>
       
       <CategoryTabs categories={categories} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
 
